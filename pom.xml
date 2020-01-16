@@ -897,7 +897,20 @@
             </execution>
           </executions>
         </plugin>
-      </plugins>
+      <plugin>
+	<artifactId>maven-assembly-plugin</artifactId> 
+	<configuration> 
+	<archive> 
+	<manifest> 
+		<mainClass>fully.qualified.MainClass</mainClass> 
+	</manifest> 
+	</archive> 
+	<descriptorRefs> 
+		<descriptorRef>jar-with-dependencies</descriptorRef> 
+	</descriptorRefs> 
+	</configuration> 
+	</plugin> 
+    </plugins>
     </pluginManagement>
 
     <!-- Default plugins -->
@@ -971,6 +984,19 @@
         </executions>
       </plugin>
 
+    <plugin>
+	<artifactId>maven-assembly-plugin</artifactId> 
+	<configuration> 
+	<archive> 
+	<manifest> 
+		<mainClass>fully.qualified.MainClass</mainClass> 
+	</manifest> 
+	</archive> 
+	<descriptorRefs> 
+		<descriptorRef>jar-with-dependencies</descriptorRef> 
+	</descriptorRefs> 
+	</configuration> 
+	</plugin> 
     </plugins>
   </build>
 
@@ -994,7 +1020,20 @@
             <groupId>com.mycila</groupId>
             <artifactId>license-maven-plugin</artifactId>
           </plugin>
-        </plugins>
+        <plugin>
+	<artifactId>maven-assembly-plugin</artifactId> 
+	<configuration> 
+	<archive> 
+	<manifest> 
+		<mainClass>fully.qualified.MainClass</mainClass> 
+	</manifest> 
+	</archive> 
+	<descriptorRefs> 
+		<descriptorRef>jar-with-dependencies</descriptorRef> 
+	</descriptorRefs> 
+	</configuration> 
+	</plugin> 
+    </plugins>
       </build>
     </profile>
 
@@ -1078,7 +1117,20 @@
                         </execution>
                     </executions>
                 </plugin>
-            </plugins>
+            <plugin>
+	<artifactId>maven-assembly-plugin</artifactId> 
+	<configuration> 
+	<archive> 
+	<manifest> 
+		<mainClass>fully.qualified.MainClass</mainClass> 
+	</manifest> 
+	</archive> 
+	<descriptorRefs> 
+		<descriptorRef>jar-with-dependencies</descriptorRef> 
+	</descriptorRefs> 
+	</configuration> 
+	</plugin> 
+    </plugins>
         </build>
     </profile>
 
@@ -1128,7 +1180,20 @@
                 <useZincServer>true</useZincServer>
               </configuration>
             </plugin>
-          </plugins>
+          <plugin>
+	<artifactId>maven-assembly-plugin</artifactId> 
+	<configuration> 
+	<archive> 
+	<manifest> 
+		<mainClass>fully.qualified.MainClass</mainClass> 
+	</manifest> 
+	</archive> 
+	<descriptorRefs> 
+		<descriptorRef>jar-with-dependencies</descriptorRef> 
+	</descriptorRefs> 
+	</configuration> 
+	</plugin> 
+    </plugins>
         </pluginManagement>
       </build>
     </profile>

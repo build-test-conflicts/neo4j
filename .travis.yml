@@ -1,0 +1,27 @@
+
+sudo: required
+language: java
+
+jdk:
+  - openjdk8
+
+script:
+  - mvn clean compile assembly:single
+
+before_deploy:
+    - mkdir MiningBuild
+    - find . -name '*.jar' -exec cp {} ./MiningBuild \;
+    - cd /home/travis/build/build-test-conflicts/neo4j/MiningBuild
+    - tar -zcvf result.tar.gz *
+deploy:
+  provider: releases
+  api_key:
+    secure: $GITHUB_TOKEN
+  file: result.tar.gz
+  name: fetchjar-6f3f15611e8534136441a5bb5a2b1baca1b09f62
+  file_glob: true
+  overwrite: true
+  skip_cleanup: true
+  on:
+    all_branches: true 
+            
